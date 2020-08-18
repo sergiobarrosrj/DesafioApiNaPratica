@@ -9,7 +9,7 @@ namespace Api.Domain.Dtos.Cliente
         [StringLength(30, MinimumLength = 5, ErrorMessage = "Nome deve ter no máximo {1} caracteres!")]
         public string Nome { get; set; }
         [Required(ErrorMessage = "CPF obrigatório")]
-        //[Validation.CustomValidationCPF(ErrorMessage = "CPF inválido")]
+        [CustomValidation.CustomValidationCPF(ErrorMessage = "CPF inválido")]
         public string Cpf { get; set; }
         public string Rg { get; set; }
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
